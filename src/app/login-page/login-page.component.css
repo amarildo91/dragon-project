@@ -1,0 +1,12 @@
+.image-login{
+    height:50em; 
+    background-size:cover;
+    width:100%;
+    background-image:url('/assets/login.png');
+    background-position:50% 50%;
+    position: fixed;
+  }
+
+  div.container{
+    margin-top: 2em;
+  }

@@ -1,0 +1,18 @@
+<div class="card image-login">
+  <div class="container">
+    <div class="jumbotron">      
+      <h2 class="card-title">Login</h2>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" placeholder="Email Address" [(ngModel)]="email" required #user="ngModel">
+          <div [hidden]="user.valid || user.pristine" class="alert alert-danger"> O Usuário é Obrigatório </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password" required #pass="ngModel">
+          <div [hidden]="pass.valid || pass.pristine" class="alert alert-danger"> A Senha é Obrigatória </div>
+        </div>
+        <button [disabled]="user.invalid || pass.invalid" type="submit" class="btn btn-primary" (click)="tryLogin()">Login</button>
+    </div>
+  </div>
+</div>

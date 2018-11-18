@@ -1,0 +1,29 @@
+<app-layout> 
+  <div>
+    <div class="text-center" style="padding: 2em;">
+      <h2>Listagem de Dragões</h2>  
+    </div>
+    <div class="text-center">
+      <table class="table  table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Data Criação</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dragon of dragonArray | order:path:order">
+            <td>{{dragon.created_at | date:'dd/MM/yyyy'}}</td>
+            <td>{{dragon.name}}</td>
+            <td>{{dragon.type}}</td>
+            <td><a class="fa fa-pencil" (click)="edit(dragon.slug)"></a></td>
+              <td><a class="fa fa-trash" (click)="delete(dragon.slug)"></a></td>
+          </tr>
+        </tbody>
+      </table>  
+    </div>
+  </div>
+</app-layout>

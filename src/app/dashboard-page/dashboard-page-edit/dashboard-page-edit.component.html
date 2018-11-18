@@ -1,0 +1,56 @@
+<app-layout>
+    <div>
+  <form #dragonForm="ngForm" (submit)="salvar()">  
+        <div class="jumbotron"> 
+            <h3 class="card-title">Edição de Dragão</h3>
+            <div class="form-group">     
+                <label for="name">Name</label>
+                <input name="name"
+                    class="form-control"
+                    [(ngModel)]="name"
+                    type="text" 
+                    required #nome="ngModel"/>
+                <div [hidden]="nome.valid || nome.pristine" 
+                     class="alert alert-danger"> O Nome é Obrigatório </div>    
+            </div>
+            <div class="form-group">
+                <label for="type">Tipo</label>
+                <input name="type" 
+                    class="form-control"
+                    [(ngModel)]="type"
+                    type="text" 
+                    required #tipo="ngModel"/>
+                <div [hidden]="tipo.valid || tipo.pristine" 
+                    class="alert alert-danger"> O Tipo é Obrigatório </div>   
+            </div>              
+            <div class="form-group"> 
+                <label for="histories">História</label>
+                <input name="histories"
+                    class="form-control"
+                    [(ngModel)]="histories"
+                    type="text" 
+                    required #hist="ngModel"/>
+                <div [hidden]="hist.valid || hist.pristine" 
+                    class="alert alert-danger"> A História é Obrigatória </div>
+            </div>  
+            
+            <table class="table table-borderless">          
+                <tbody>
+                    <tr>
+                    <td>
+                        <div class="card">
+                            <button [disabled]="dragonForm.invalid"  type="submit" class="btn btn-success" >Salvar</button>
+                        </div>  
+                    </td>
+                    <td>
+                        <div class="card">
+                            <a href="/dashboard" class="btn btn-primary" >Voltar</a>
+                        </div>   
+                    </td>
+                    </tr>
+                </tbody>
+            </table>  
+   </div>
+</form>
+    </div>
+</app-layout>
